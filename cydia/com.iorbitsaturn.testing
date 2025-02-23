@@ -1,0 +1,32 @@
+<packageInfo>
+<bundleId>ch.mdaus.exampletweak</bundleId>
+<name>Example Tweak</name>
+<version>0.0</version>
+<descriptions>
+<description>
+i do nothing
+</description>
+<description>
+this tweak doesnt actually exist
+</description>
+</descriptions>
+<compatibility>
+<miniOS>1</miniOS>
+<maxiOS>19</maxiOS>
+</compatibility>
+<dependencies>
+<dependency>mobilesubstrate</dependency>
+<dependency>some other dependency</dependency>
+</dependencies>
+<changelog>
+<change>
+<changeVersion>V0.0 </changeVersion>
+<changeDescription>An important change</changeDescription>
+<changeDescription>Another important change</changeDescription>
+</change>
+<change>
+<changeVersion>V0.0</changeVersion>
+<changeDescription>Initial Release</changeDescription>
+</change>
+</changelog>
+</packageInfo>
