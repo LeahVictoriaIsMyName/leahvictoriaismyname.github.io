@@ -3,7 +3,7 @@
 	body{
 	height: 100%;
 	margin: 0%;
-	background-image: linear-gradient(#afd1fe, #5f5f8f);
+	background-image: linear-gradient(#afd1fe, #f3f3ff);
 	background-repeat: no-repeat;     
 	text-align: center;
 	-webkit-user-select: none;
@@ -13,14 +13,39 @@
 	user-select: none;
 
 }
+.btn {
+ width: 130px;
+ height: 40px;
+ font-size: 1.1em;
+ cursor: pointer;
+ background-color: #171717;
+ color: #fff;
+ border: none;
+ border-radius: 5px;
+ transition: all .4s;
+}
+
+.btn:hover {
+ border-radius: 5px;
+ transform: translateY(-10px);
+ box-shadow: 0 7px 0 -2px #f85959,
+  0 15px 0 -4px #39a2db,
+  0 16px 10px -3px #39a2db;
+}
+
+.btn:active {
+ transition: all 0.2s;
+ transform: translateY(-5px);
+ box-shadow: 0 2px 0 -2px #f85959,
+  0 8px 0 -4px #39a2db,
+  0 12px 10px -3px #39a2db;
+}
 </style>
 <html lang="english"><head>
 	
-		<title>1995/07/29</title>
-		<meta name="description" content="Every copy of Super Mario 64 is personalized. Every copy of Super Mario 64 is personalized. Every copy of Super Mario 64 is personalized. Every copy of Super Mario 64 is personalized. Every copy of Super Mario 64 is personalized. Every copy of Super Mario 64 is personalized. Every copy of Super Mario 64 is personalized.">
-		<meta name="msapplication-TileColor" content="#0071d4">
-		<meta name="theme-color" content="#0071d4">
-		<link rel="shortcut icon" href=stlayer_data/img2.webp>
+		<title>stlayer.info</title>
+		<meta name="description" content="Revival of stlayer.info">
+
 	</head>
 	
 	<body>
@@ -34,7 +59,7 @@
 			var randomIndex = Math.floor(Math.random() * imageURLs.length);
 			img += imageURLs[randomIndex];
 			img += '\" alt=\"Every copy of Super Mario 64 is personalized.\"';
-			img += '\ style=\"width:80%; height:100%; \"/>';
+			img += '\ style=\"width:70%; height:80%; \"/>';
 			return img;
 		}
 		function GetAudio() {
@@ -47,14 +72,18 @@
 			return audio;
 		}
 		function WritePage(){
-			document.write()
-			document.write(GetAudio())
+			document.write('<head>			<title>1995/07/29</title>		<meta name="description" content="Every copy of Super Mario 64 is personalized. Every copy of Super Mario 64 is personalized. Every copy of Super Mario 64 is personalized. Every copy of Super Mario 64 is personalized. Every copy of Super Mario 64 is personalized. Every copy of Super Mario 64 is personalized. Every copy of Super Mario 64 is personalized.">		<meta name="msapplication-TileColor" content="#0071d4">		<meta name="theme-color" content="#0071d4">		<link rel="shortcut icon" href=stlayer_data/img2.webp>	</head> <style>body {        height: 100%;        margin: 1%;        background-color: #000000;        background-repeat: no-repeat;        text-align: left;        -webkit-user-select: none;        -moz-user-select: none;        user-select: none; } .btn { width: 130px; height: 40px; font-size: 1.1em; cursor: pointer; background-color: #171717; color: #fff; border: none; border-radius: 5px; transition: all .4s;}.btn:hover { border-radius: 5px; transform: translateY(-10px); box-shadow: 0 7px 0 -2px #f85959,  0 15px 0 -4px #39a2db,  0 16px 10px -3px #39a2db;} .btn:active { transition: all 0.2s; transform: translateY(-5px); box-shadow: 0 2px 0 -2px #f85959,  0 8px 0 -4px #39a2db,  0 12px 10px -3px #39a2db;}</style>')
+			document.write('<a href=1995_07_29.html><button class="btn">Go back</button></a>')
+			document.write('<br>')
 			document.write(GetImage())
+			document.write('<br>')
+			document.write(GetAudio())
+
 		}
 		</script>
 		<noscript><meta http-equiv="refresh" content="0"; src = 1995_07_29.html/></noscript>
 		<br>
-		<h1>TURN IT OFF OTTO!!</h1>
+		<h1>Well, that's certainly weird</h1>
 		<p>This is a reimplementation of stlayer.info, a bizzarre website showing surreal and cursed Mario 64 imagery.
 			To correctly use this page, refresh and hit the <b>Start stlayer.info emulation</b> and a new page will pop up.
 		</p>
@@ -70,7 +99,11 @@
         <br>
         <br>
         <br>
-		<button onclick="WritePage()">Start stlayer.info emulation</button>
+		<a onclick=WritePage()>
+        <!-- From Uiverse.io by Mike11jr --> 
+        <button class="btn">/scare @s</button>
+    </a>
+		<!-- button onclick="WritePage()">Start stlayer.info emulation</button-->
 		<br>
 		<a href="index.html">Go back to the index page</a>
 		<br>
@@ -90,8 +123,7 @@
         <br>
         <br>
         <br>
-		<img src="index_resources/stlayer.png">SGI, Reality Engine, Onyx and the SGI PROM are property of Silicon Graphics International</img>
-        <br>
+		
         <br>
         <br>
         <br>
