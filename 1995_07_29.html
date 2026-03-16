@@ -13,33 +13,82 @@
 	user-select: none;
 
 }
-.btn {
- width: 130px;
- height: 40px;
- font-size: 1.1em;
- cursor: pointer;
- background-color: #171717;
- color: #fff;
- border: none;
- border-radius: 5px;
- transition: all .4s;
+/* From Uiverse.io by SelfMadeSystem */ 
+.vista-button {
+  position: relative;
+  cursor: pointer;
+  padding: 4px 8px;
+  border: 1px solid black;
+  border-radius: 4px;
+  color: #fff;
+  text-shadow: 1px 1px #000;
+  box-shadow:
+    inset 0px 4px 4px -3px #fff0,
+    inset 0px -3px 4px -3px #fff;
+  background: linear-gradient(#ddd, #999 50%, #000 50%);
+  isolation: isolate;
+  transition:
+    0.25s all,
+    0.1s background-position;
 }
 
-.btn:hover {
- border-radius: 5px;
- transform: translateY(-10px);
- box-shadow: 0 7px 0 -2px #f85959,
-  0 15px 0 -4px #39a2db,
-  0 16px 10px -3px #39a2db;
+.vista-button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: radial-gradient(circle at 50% 150%, #48b9ef, #0000 50%);
+  background-size: 300% 50%;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: inherit;
 }
 
-.btn:active {
- transition: all 0.2s;
- transform: translateY(-5px);
- box-shadow: 0 2px 0 -2px #f85959,
-  0 8px 0 -4px #39a2db,
-  0 12px 10px -3px #39a2db;
+.vista-button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: radial-gradient(circle at 50% 320%, #48b9ef, #0000 50%);
+  background-size: 300% 50%;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: inherit;
 }
+
+.vista-button:hover {
+  box-shadow:
+    inset 0px 4px 4px -3px #fff5,
+    inset 0px -3px 4px -3px #fff;
+}
+.vista-button:hover::before,
+.vista-button:hover::after {
+  opacity: 1;
+}
+
+.vista-button:active::before,
+.vista-button:active::after {
+  opacity: 0;
+}
+
+.vista-button:active {
+  box-shadow:
+    inset 0px 4px 4px -3px #000,
+    inset 0px -4px 4px -3px #000c,
+    inset 0px 0px 24px -3px #000a;
+  background-position: 1px 1px;
+}
+
+.vista-button div {
+  transition: 0.1s translate;
+}
+
+.vista-button:active div {
+  translate: 1px 1px;
+}
+
 </style>
 <html lang="english"><head>
 	
@@ -100,8 +149,9 @@
         <br>
         <br>
 		<a onclick=WritePage()>
-        <!-- From Uiverse.io by Mike11jr --> 
-        <button class="btn">/scare @s</button>
+        <!-- From Uiverse.io by SelfMadeSystem --> 
+<button  class="vista-button" onclick="WritePage()"><div>Start stlayer.info emulation</div></button>
+
     </a>
 		<!-- button onclick="WritePage()">Start stlayer.info emulation</button-->
 		<br>
