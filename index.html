@@ -5,7 +5,7 @@
 	margin: 0%;
 	background-image: linear-gradient(#afd1fe, #f3f3ff);
 	background-repeat: no-repeat;     
-	text-align: center;
+	text-align: left;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
 	-moz-user-select: none;
@@ -13,57 +13,82 @@
 	user-select: none;
 
 }
-
-.topnav {
-  overflow: hidden;
-  background-color: #000;
+/* From Uiverse.io by SelfMadeSystem */ 
+.vista-button {
+  position: relative;
+  cursor: pointer;
+  padding: 4px 8px;
+  border: 1px solid black;
+  border-radius: 4px;
+  color: #fff;
+  text-shadow: 1px 1px #000;
+  box-shadow:
+    inset 0px 4px 4px -3px #fff0,
+    inset 0px -3px 4px -3px #fff;
+  background: linear-gradient(#ddd, #999 50%, #000 50%);
+  isolation: isolate;
+  transition:
+    0.25s all,
+    0.1s background-position;
 }
 
-.topnav a {
-  float: left;
-  color: #f3f3ff;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+.vista-button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: radial-gradient(circle at 50% 150%, #48b9ef, #0000 50%);
+  background-size: 300% 50%;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: inherit;
 }
 
-.topnav a:hover {
-  background-color: #f3f3ff;
-  color: black;
+.vista-button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: radial-gradient(circle at 50% 320%, #48b9ef, #0000 50%);
+  background-size: 300% 50%;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: inherit;
 }
 
-.topnav a.active {
-  background-color: #afd1fe;
-  color: white;
+.vista-button:hover {
+  box-shadow:
+    inset 0px 4px 4px -3px #fff5,
+    inset 0px -3px 4px -3px #fff;
 }
-.btn {
- width: 130px;
- height: 40px;
- font-size: 1.1em;
- cursor: pointer;
- background-color: #171717;
- color: #fff;
- border: none;
- border-radius: 5px;
- transition: all .4s;
+.vista-button:hover::before,
+.vista-button:hover::after {
+  opacity: 1;
 }
 
-.btn:hover {
- border-radius: 5px;
- transform: translateY(-10px);
- box-shadow: 0 7px 0 -2px #f85959,
-  0 15px 0 -4px #39a2db,
-  0 16px 10px -3px #39a2db;
+.vista-button:active::before,
+.vista-button:active::after {
+  opacity: 0;
 }
 
-.btn:active {
- transition: all 0.2s;
- transform: translateY(-5px);
- box-shadow: 0 2px 0 -2px #f85959,
-  0 8px 0 -4px #39a2db,
-  0 12px 10px -3px #39a2db;
+.vista-button:active {
+  box-shadow:
+    inset 0px 4px 4px -3px #000,
+    inset 0px -4px 4px -3px #000c,
+    inset 0px 0px 24px -3px #000a;
+  background-position: 1px 1px;
 }
+
+.vista-button div {
+  transition: 0.1s translate;
+}
+
+.vista-button:active div {
+  translate: 1px 1px;
+}
+
 </style>
 
 
@@ -75,12 +100,6 @@
     <meta name="The landing page of my webpage">
 </head>
 <body>
-    <!---- div class="topnav">
-  <a class="active" href="index.html">Home</a>
-  <a href="updates.html">Updates</a>
-  <a href="testingfield.html">Testing Field</a>
-  <a href="revivals.html">Revivals</a>
-</div -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
 
     <h1>Hi!</h1>
@@ -91,32 +110,37 @@
     <br>
 
     <a href=1995_07_29.html>
-        <!-- From Uiverse.io by Mike11jr --> 
-        <button class="btn">stlayer.info!</button>
+        <!-- From Uiverse.io by SelfMadeSystem --> 
+<button class="vista-button"><div>stlayer.info</div></button>
+
     </a>
     <br>
     <embed src="index_resources/st.png" width="720" height="480"/>
     <br>
     <br>
     <a href=testingfield.html>
-        <!-- From Uiverse.io by Mike11jr --> 
-        <button class="btn">A testing field</button>
+        <!-- From Uiverse.io by SelfMadeSystem --> 
+<button class="vista-button"><div>A Teardrop</div></button>
+
     </a>
     <br>
     <embed src="index_resources/boom.png" width="720" height="480"/>
     <br>
     <br>
     <a href=revivals.html>
-        <!-- From Uiverse.io by Mike11jr --> 
-        <button class="btn">UI Revivals</button>
+        <!-- From Uiverse.io by SelfMadeSystem --> 
+<button class="vista-button"><div>UI Revivals</div></button>
+
     </a>
     <br>
     <br>
     <embed src="index_resources/ui.png" width="720" height="480"/>
     <br>
     <a href=mydih.html>
-        <!-- From Uiverse.io by Mike11jr --> 
-        <button class="btn">my dih</button>
+
+        <!-- From Uiverse.io by SelfMadeSystem --> 
+    <button class="vista-button"><div>my dih</div></button>
+
         
     </a>
     <br>
