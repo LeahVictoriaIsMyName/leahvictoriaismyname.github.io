@@ -1,4 +1,176 @@
 <!DOCTYPE html>
+<style>
+body{
+ height: 100%;
+ margin: 0%;
+ background-image: linear-gradient(#afd1fe, #f3f3ff);
+ background-repeat: no-repeat;     
+ text-align: center;
+ -webkit-user-select: none;
+ -khtml-user-select: none;
+ -moz-user-select: none;
+ -o-user-select: none;
+ user-select: none;
+
+}
+/* From Uiverse.io by SelfMadeSystem */ 
+.bar {
+  position: relative;
+  user-select: none;
+  padding: 4px 8px;
+  border: 1px solid #546069;
+  box-shadow: inset 0px 0px 0px 1px #a9c5d3;
+  border-radius: 4px;
+  color: #fff;
+  text-shadow: 1px 1px #000;
+  background: linear-gradient(
+    #86b6be,
+    #4e96a2 50%,
+    #166777 50%,
+    #1e6b7a 75%,
+    #54a3ab
+  );
+  isolation: isolate;
+}
+
+.vista-button {
+  position: relative;
+  cursor: pointer;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: #fff;
+  text-shadow: 1px 1px #000;
+  transition:
+    0.25s all,
+    0.1s translate;
+}
+
+.vista-button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border: 1px solid #0d404e;
+  box-shadow: inset 0px 0px 0px 1px #a9c5d3;
+  border-radius: inherit;
+  background: linear-gradient(#b0c9d7, #5a8ba5 50%, #185576 50%, #326c8b);
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: inherit;
+}
+
+.vista-button:hover::after {
+  opacity: 0.5;
+}
+
+.vista-button:active {
+  translate: 1px 1px;
+}
+
+.vista-button:active::after {
+  opacity: 1;
+  translate: -1px -1px;
+}
+
+/* From Uiverse.io by SelfMadeSystem */ 
+.vista-button {
+  position: relative;
+  cursor: pointer;
+  padding: 4px 8px;
+  border: 1px solid black;
+  border-radius: 4px;
+  color: #fff;
+  text-shadow: 1px 1px #000;
+  box-shadow:
+    inset 0px 4px 4px -3px #fff0,
+    inset 0px -3px 4px -3px #fff;
+  background: linear-gradient(#ddd, #999 50%, #000 50%);
+  isolation: isolate;
+  transition:
+    0.25s all,
+    0.1s background-position;
+}
+
+.vista-button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: radial-gradient(circle at 50% 150%, #48b9ef, #0000 50%);
+  background-size: 300% 50%;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: inherit;
+}
+
+.vista-button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: radial-gradient(circle at 50% 320%, #48b9ef, #0000 50%);
+  background-size: 300% 50%;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: inherit;
+}
+
+.vista-button:hover {
+  box-shadow:
+    inset 0px 4px 4px -3px #fff5,
+    inset 0px -3px 4px -3px #fff;
+}
+.vista-button:hover::before,
+.vista-button:hover::after {
+  opacity: 1;
+}
+
+.vista-button:active::before,
+.vista-button:active::after {
+  opacity: 0;
+}
+
+.vista-button:active {
+  box-shadow:
+    inset 0px 4px 4px -3px #000,
+    inset 0px -4px 4px -3px #000c,
+    inset 0px 0px 24px -3px #000a;
+  background-position: 1px 1px;
+}
+
+.vista-button div {
+  transition: 0.1s translate;
+}
+
+.vista-button:active div {
+  translate: 1px 1px;
+}
+
+@font-face {
+  font-family: 'Wokelibri';
+  src: url('media/calibri-font-family/calibri-regular.ttf') format('ttf'),
+       url('media/calibri-font-family/calibri-bold.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  
+}
+
+body {
+  font-family: 'Wokelibri', sans-serif;
+}
+
+</style>
+
+<head>
+    <title>Galaction</title>
+    <meta charset="UTF-8">
+    <meta name="Galaction (Testing)">
+</head>
+
 <body>
     <h1>Welcome to Galaction! (Unstable release)</h1>
 <p>According to all known laws of aviation, there is no way a bee should be able to fly.
