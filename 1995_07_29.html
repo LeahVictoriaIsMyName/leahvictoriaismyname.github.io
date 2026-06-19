@@ -1,193 +1,347 @@
 <!DOCTYPE html>
-<style>
-	body{
-	height: 100%;
-	margin: 0%;
-	background-image: linear-gradient(#afd1fe, #f3f3ff);
-	background-repeat: no-repeat;     
-	text-align: center;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-o-user-select: none;
-	user-select: none;
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>stlayer.info Revival</title>
+  <meta name="description" content="Revival of stlayer.info with clean IOrbitSaturn styling.">
+  <style>
+    /* From Uiverse.io by zjssun */
+    @font-face {
+      font-family: 'Calibri';
+      src: url('media/calibri-font-family/calibri-regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
 
-}
-/* From Uiverse.io by SelfMadeSystem */ 
-.vista-button {
-  position: relative;
-  cursor: pointer;
-  padding: 4px 8px;
-  border: 1px solid black;
-  border-radius: 4px;
-  color: #fff;
-  text-shadow: 1px 1px #000;
-  box-shadow:
-    inset 0px 4px 4px -3px #fff0,
-    inset 0px -3px 4px -3px #fff;
-  background: linear-gradient(#ddd, #999 50%, #000 50%);
-  isolation: isolate;
-  transition:
-    0.25s all,
-    0.1s background-position;
-}
+    :root {
+      color-scheme: dark;
+      font-family: 'Calibri', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
 
-.vista-button::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background: radial-gradient(circle at 50% 150%, #48b9ef, #0000 50%);
-  background-size: 300% 50%;
-  background-position: 50% 100%;
-  background-repeat: no-repeat;
-  opacity: 0;
-  transition: inherit;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-.vista-button::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background: radial-gradient(circle at 50% 320%, #48b9ef, #0000 50%);
-  background-size: 300% 50%;
-  background-position: 50% 0%;
-  background-repeat: no-repeat;
-  opacity: 0;
-  transition: inherit;
-}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 90px 18px 36px;
+      background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0) 100%),
+        linear-gradient(to right, #ff7300, #ffd900);
+      color: #fff;
+    }
 
-.vista-button:hover {
-  box-shadow:
-    inset 0px 4px 4px -3px #fff5,
-    inset 0px -3px 4px -3px #fff;
-}
-.vista-button:hover::before,
-.vista-button:hover::after {
-  opacity: 1;
-}
+    #topbar {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: 70px;
+      width: 100%;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      background: linear-gradient(
+        to right,
+        rgba(0, 255, 55, 0.5) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(111, 0, 255, 0.5) 100%
+      );
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0px;
+      padding: 0 0px;
+      z-index: 20;
+    }
 
-.vista-button:active::before,
-.vista-button:active::after {
-  opacity: 0;
-}
+    .topbar-left,
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 0px;
+    }
 
-.vista-button:active {
-  box-shadow:
-    inset 0px 4px 4px -3px #000,
-    inset 0px -4px 4px -3px #000c,
-    inset 0px 0px 24px -3px #000a;
-  background-position: 1px 1px;
-}
+    .topbarlogo img,
+    #topbar img {
+      height: 44px;
+      width: auto;
+      display: block;
+    }
 
-.vista-button div {
-  transition: 0.1s translate;
-}
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.vista-button:active div {
-  translate: 1px 1px;
-}
+    .nav a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.05);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
 
-</style>
-<html lang="english"><head>
-	
-		<title>stlayer.info</title>
-		<meta name="description" content="Revival of stlayer.info">
+    .nav a:hover,
+    .nav a:focus-visible {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.45);
+      transform: translateY(-1px);
+    }
 
-	</head>
-	
-	<body>
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding-top: 24px;
+    }
 
-		<script type="text/javascript">
-			// probably a better way to do this but who cares LOL
-		var imageURLs = [ "stlayer_data/img1.jpg", "stlayer_data/img3.webp", "stlayer_data/img4.webp", "stlayer_data/img5.webp", "stlayer_data/img6.webp", "stlayer_data/img7.webp", "stlayer_data/img8.webp", "stlayer_data/img9.webp"];
-		var audioURLs = [ "stlayer_data/1.ogg", "stlayer_data/2layer.ogg", "stlayer_data/3layer.ogg", "stlayer_data/4.ogg", "stlayer_data/5.ogg", "stlayer_data/6.mp3", "stlayer_data/7.ogg", "stlayer_data/8.ogg", "stlayer_data/9.ogg", "stlayer_data/10.ogg", "stlayer_data/11layer.ogg", "stlayer_data/12layer.ogg", ];
-		function GetImage() {
-			var img = '<img src=\"';
-			var randomIndex = Math.floor(Math.random() * imageURLs.length);
-			img += imageURLs[randomIndex];
-			img += '\" alt=\"Every copy of Super Mario 64 is personalized.\"';
-			img += '\ style=\"width:70%; height:80%; \"/>';
-			return img;
-		}
-		function GetAudio() {
-			var audio = '<embed src="';
-			var index = Math.floor(Math.random() * audioURLs.length);
-			audio += audioURLs[index];
-			audio += '\" loop="true"\"';
-			audio += '\ autostart="false"\"';
-			audio += '\ hidden="true"\"/>';
-			return audio;
-		}
-		function WritePage(){
-			document.write('<head>			<title>1995/07/29</title>		<meta name="description" content="Every copy of Super Mario 64 is personalized. Every copy of Super Mario 64 is personalized. Every copy of Super Mario 64 is personalized. Every copy of Super Mario 64 is personalized. Every copy of Super Mario 64 is personalized. Every copy of Super Mario 64 is personalized. Every copy of Super Mario 64 is personalized.">		<meta name="msapplication-TileColor" content="#0071d4">		<meta name="theme-color" content="#0071d4">		<link rel="shortcut icon" href=stlayer_data/img2.webp>	</head> <style>body {        height: 100%;        margin: 1%;        background-color: #000000;        background-repeat: no-repeat;        text-align: left;        -webkit-user-select: none;        -moz-user-select: none;        user-select: none; } .btn { width: 130px; height: 40px; font-size: 1.1em; cursor: pointer; background-color: #171717; color: #fff; border: none; border-radius: 5px; transition: all .4s;}.btn:hover { border-radius: 5px; transform: translateY(-10px); box-shadow: 0 7px 0 -2px #f85959,  0 15px 0 -4px #39a2db,  0 16px 10px -3px #39a2db;} .btn:active { transition: all 0.2s; transform: translateY(-5px); box-shadow: 0 2px 0 -2px #f85959,  0 8px 0 -4px #39a2db,  0 12px 10px -3px #39a2db;}</style>')
-			document.write('<a href=1995_07_29.html><button class="btn">Go back</button></a>')
-			document.write('<br>')
-			document.write(GetImage())
-			document.write('<br>')
-			document.write(GetAudio())
+    .hero {
+      padding: 90px 0 40px;
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto;
+    }
 
-		}
-		</script>
-		<noscript><meta http-equiv="refresh" content="0"; src = 1995_07_29.html/></noscript>
-		<br>
-		<h1>Well, that's certainly weird</h1>
-		<p>This is a reimplementation of stlayer.info, a bizzarre website showing surreal and cursed Mario 64 imagery.
-			To correctly use this page, refresh and hit the <b>Start stlayer.info emulation</b> and a new page will pop up.
-		</p>
-		<br>
-		<br>
-		<br>
-		<br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-		<a onclick=WritePage()>
-        <!-- From Uiverse.io by SelfMadeSystem --> 
-<button  class="vista-button" onclick="WritePage()"><div>Start stlayer.info emulation</div></button>
-    </a>
-		<!-- button onclick="WritePage()">Start stlayer.info emulation</button-->
-    <a href=suspended.html>
-<button class="vista-button"><div>Suspension page</div></button>
-</a>
-<a href="File Not Found. Leave.html">
-<button class="vista-button"><div>404 page</div></button>
-</a>
-    <br>
-		<a href="index.html">Go back to the index page</a>
-		<br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-		
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-		<embed src="media/Over the Horizon (2012).mp3" loop="true" autostart="true" hidden="true">
-        <br>
-		
+    .hero h1 {
+      font-size: clamp(3rem, 4vw, 4.4rem);
+      line-height: 1.02;
+      margin: 0;
+    }
 
-       </body>
+    .hero p.subtitle,
+    .hero p.description {
+      margin: 16px auto 0;
+      max-width: 720px;
+      line-height: 1.6;
+      color: #dcdcdc;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin: 48px auto 0;
+      max-width: 1080px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 20px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(18px);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .card a.button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .card a.button:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      display: block;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer {
+      margin-top: 48px;
+      text-align: center;
+      color: #bdbdbd;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .footer strong {
+      color: #fff;
+    }
+
+    .mobile-warning .page-content {
+      display: none;
+    }
+
+    .mobile-message {
+      display: none;
+      max-width: 460px;
+      margin: 140px auto 0;
+      padding: 28px;
+      border-radius: 24px;
+      background: #f4f7fb;
+      color: #111;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.18);
+      text-align: center;
+    }
+
+    .mobile-message h2 {
+      margin: 0 0 14px;
+      color: #111;
+      font-size: 1.55rem;
+    }
+
+    .mobile-message p {
+      margin: 0;
+      color: #4a4a4a;
+      line-height: 1.7;
+    }
+
+    .mobile-warning .mobile-message {
+      display: block;
+    }
+
+    @media (max-width: 820px) {
+      body {
+        padding-top: 110px;
+      }
+
+      #topbar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 16px;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero h1 {
+        font-size: 2.75rem;
+      }
+
+      .nav {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="topbar">
+    <div class="topbar-left">
+      <img src="index_resources/header_left.svg" alt="Header Left">
+      <div class="topbarlogo">
+        <img id="topbar-logo" src="index_resources/reality_engine_logo.png" alt="Reality Engine Logo">
+      </div>
+    </div>
+    <div class="topbar-right">
+      <nav class="nav">
+        <a href="index.html">Index</a>
+        <a href="legacy_index.html">Old Index</a>
+      </nav>
+      <img src="index_resources/header_right.svg" alt="Header Right">
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <h1>stlayer.info Revival</h1>
+      <p class="subtitle">A cleaner IOrbitSaturn version of the surreal stlayer.info experience.</p>
+      <p class="description">Click start to load a random image and sound from the original revival collection.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Launch emulation</h2>
+        <p>Press the button below to begin. The page will choose a random image and audio track from the stlayer archive.</p>
+        <button class="button" id="startButton" type="button">Start stlayer.info emulation</button>
+      </article>
+
+      <article class="card emulation">
+        <p id="emulationText">You have not clicked the button to start emulation</p>
+        <img id="stlayerImage" src="" alt="stlayer preview" hidden>
+        <audio id="stlayerAudio" loop hidden></audio>
+      </article>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <a class="button" href="suspended.html">Suspension page</a>
+      </article>
+      <article class="card">
+        <a class="button" href="File Not Found. Leave.html">404 page</a>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p><strong>SGI, Reality Engine, Onyx</strong> and the SGI PROM are property of Silicon Graphics International.</p>
+    </footer>
+  </main>
+
+  <script>
+    const imageURLs = [
+      'stlayer_data/img1.jpg',
+      'stlayer_data/img3.webp',
+      'stlayer_data/img4.webp',
+      'stlayer_data/img5.webp',
+      'stlayer_data/img6.webp',
+      'stlayer_data/img7.webp',
+      'stlayer_data/img8.webp',
+      'stlayer_data/img9.webp'
+    ];
+
+    const audioURLs = [
+      'stlayer_data/1.ogg',
+      'stlayer_data/2layer.ogg',
+      'stlayer_data/3layer.ogg',
+      'stlayer_data/4.ogg',
+      'stlayer_data/5.ogg',
+      'stlayer_data/6.mp3',
+      'stlayer_data/7.ogg',
+      'stlayer_data/8.ogg',
+      'stlayer_data/9.ogg',
+      'stlayer_data/10.ogg',
+      'stlayer_data/11layer.ogg',
+      'stlayer_data/12layer.ogg'
+    ];
+
+    const startButton = document.getElementById('startButton');
+    const emulationText = document.getElementById('emulationText');
+    const stlayerImage = document.getElementById('stlayerImage');
+    const stlayerAudio = document.getElementById('stlayerAudio');
+
+    startButton.addEventListener('click', () => {
+      const imageIndex = Math.floor(Math.random() * imageURLs.length);
+      const audioIndex = Math.floor(Math.random() * audioURLs.length);
+      stlayerImage.src = imageURLs[imageIndex];
+      stlayerImage.hidden = false;
+      stlayerAudio.src = audioURLs[audioIndex];
+      stlayerAudio.hidden = false;
+      stlayerAudio.play().catch(() => {
+        console.warn('Audio autoplay blocked. Start playback manually if needed.');
+      });
+      emulationText.textContent = 'Running stlayer.info emulation through Javascript';
+    });
+  </script>
+</body>
 </html>
